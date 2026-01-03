@@ -1,5 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#include <complex.h>
+#include <time.h>
+
+#define PI 3.141592653589793
+#define PATH_SAMPLES 1024
+#define MONTE_SAMPLES 4096
+#define DFT_SIZE 32
 
 double
 planck_length(void)
