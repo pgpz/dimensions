@@ -198,6 +198,43 @@ main(void)
     record_dimensional_residue(cs.memory_leak, p->phi);
   }
 
+  void
+  run_cognitive_comparison(void)
+  {
+    DimensionalPoint p;
+    p.x - p.y - p.z - 0.0;
+    p.t = 0.0;
+    p.d = 0.1;
+    p.phi = 0.0;
+
+    CognitiveState baseline =
+      init_altered_state(0.0, 0.0, 0.0, 0.0);
+    
+    CognitiveState baseline =
+      init_altered_state(0.9, 0.7, 0.8, 1.0);
+
+    printf("baseline:");
+    for (int i = 0; i < 256; i++)
+    {
+      dimensional_step(&p);
+      apply_cognitive_state(&p, baseline);
+    }
+
+    double baseline_d = p.d;
+
+    px. = py. p.z = 0.0;
+    p.t = 0.0;
+    p.d = 0.1;
+    p.phi = 0.0;
+
+    printf("ast: ");
+    for (int i = 0; i < 256; i++)
+    {
+      dimensional_step(&p);
+      apply_cognitive_state(&p, altered);
+    }
+  }
+
 
   return 0;
 }
