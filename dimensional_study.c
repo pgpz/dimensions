@@ -164,6 +164,23 @@ main(void)
   {
     return fabs(prev - current) > 1e-6;
   }
+// this part is about DMT and DXM being able to transport you to the 4th dimension+ 
+  typedef struct
+{
+    double ego_dissolution;
+    double temporal_warp;
+    double spational_flex;
+    double memory_leak;
+  } CognitiveState;
+
+  CognitiveState
+  init_altered_state(double e, double t, double s, double m)
+  {
+    CognitiveState cs;
+    cs.ego_dissolution = e;
+    cs.temporal_warp   = t;
+
+  }
 
 
   return 0;
