@@ -185,6 +185,19 @@ main(void)
 
   }
 
+  void
+  apply_cognitive_state(DimensionalPoint *p, CognitiveState cs)
+  {
+    p->x += cs.spatial_flex * sin(p->phi);
+    p->y += cs.spatial_flex * cos(p->phi);
+    p->z += cs.spatial_flex * sin(p->phi * 2.0);
+
+    p->t += cs.temporal_warp * 0.01;
+    p->d += cs.ego_dissolution * 0.001;
+
+    record_dimensional_residue(cs.memory_leak, p->phi);
+  }
+
 
   return 0;
 }
