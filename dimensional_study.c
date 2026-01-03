@@ -235,6 +235,40 @@ main(void)
     }
   }
 
+  double complex
+  quantum_path_amplitude(double action)
+  {
+    return cexp(I * action / hbar());
+  }
+
+  double
+  compute_action(DimensionalPoint p, double curvature)
+  {
+    double spatial = sqrt(p.x*p.x + p.y*p.y + p.z*p.z);
+    double temporal = fabs(p.t);
+    double extra = fabs(p.d);
+
+    return spatial * temporal * (1.0 + curvature) + extra;
+  }
+
+  double complex
+  path_integral_sample(DimensionalPoint p, int samples)
+  {
+    double complex sum = 0.0 + 0.0*I
+
+      for (int i = 0; i < samples; i++)
+    {
+      double fluct = rand_unt() * 0.1;
+      double action = compute_action(p, fluct);
+      sum += quantum_path_amplitude(action);
+    }
+
+    return sum / (double)samples;
+    
+  }
+    
+  }
+
 
   return 0;
 }
