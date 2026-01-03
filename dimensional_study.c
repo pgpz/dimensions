@@ -179,6 +179,9 @@ main(void)
     CognitiveState cs;
     cs.ego_dissolution = e;
     cs.temporal_warp   = t;
+    cs.spatial_flex    = s;
+    cs.memory_leak     = m;
+    return cs;
 
   }
 
