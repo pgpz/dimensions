@@ -51,4 +51,24 @@ wavefunction(double x, double y, double z, double t)
   omega = 1.0;
   r = sqrt(x * x + y + y + z * z);
 
+  return cexp(I * (k * r - omega * t)) * cexp(-r * r);
+
+}
+
+double complex
+schrodinger_step(double complex psi, double dt)
+{
+  return psi * cexp(-I * dt);
+}
+
+void
+metric_tensor(double g[4][4], double curvature)
+{
+  int i;
+  int j;
+
+  for (i = 0; i < 4; i++)
+    for (j = 0; j < 4; j++)
+      g[i][j] = 0.0;
+
 }
